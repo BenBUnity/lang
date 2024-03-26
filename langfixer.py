@@ -1,9 +1,9 @@
-localVer = 1
+localVer = 2
 
 
 import wget
 import os
-print("Importing packages")
+print("Importing pakcages")
 
 debug = False\
 
@@ -15,7 +15,7 @@ verCheckData = open(verCheck, 'r').read()
 os.remove(verCheck)
 
 if int(verCheckData) > localVer:
-    input("\n------\n\nA newer version of this program is available (v" + str(int(verCheckData)) + ")\n\nPress enter to continue running\n\n------\n")
+    input("\n------\n\nA newer version of this program is available (v" + str(int(verCheckData)) + ")\n\n[Enter] Kontinue\n\n------\n")
 
 
 print("Downloading page")
@@ -38,11 +38,10 @@ print("Data parsed")
 
 
 
-
 while True:
     
-    print("SenseiLangTM - Kode Ninjas language fixer")
-    epocWord = input("Word input? > ")
+    print("\n\nSenseiLangTM - Kode Ninjas language fixer")
+    epocWord = input("\nInput > ")
 
     done = epocWord.translate(str.maketrans('ck', 'kc'))
     done = done.translate(str.maketrans('CK', 'KC'))
@@ -51,5 +50,5 @@ while True:
         done = done.replace(fixIt[0],fixIt[1])
 
     
-
-    input(done + "\n\n")
+    print("Output v")
+    input(done + "\n\n[Enter] Start again\n\n------")
