@@ -1,14 +1,26 @@
+localVer = 0
+
 
 import wget
 import os
 print("Importing packages")
 
-debug = False
+debug = False\
+
+
+print("Getting ready")
+url = "https://raw.githubusercontent.com/BenBUnity/lang/main/verCheck" 
+verCheck = wget.download(url, 'verCheck.txt')
+verCheckData = open(verCheck, 'r').read()
+os.remove(verCheck)
+
+if int(verCheckData) > localVer:
+    input("\n------\n\nA newer version of this program is available (v" + str(int(verCheckData)) + ")\n\nPress enter to continue running\n\n------\n")
 
 
 print("Downloading page")
 url = "https://raw.githubusercontent.com/BenBUnity/lang/main/words" 
-data = wget.download(url, 'data2.txt')
+data = wget.download(url, 'words.txt')
 print(data)
 print("Data parsing")
 f = open(data, 'r')
@@ -21,7 +33,7 @@ for i in impWords:
             if debug:
                 print(i.split(","))
 
-
+os.remove(data)
 print("Data parsed")
 
 
