@@ -3,7 +3,7 @@ import wget
 import os
 print("Importing packages")
 
-debug = True
+debug = False
 
 
 print("Downloading page")
