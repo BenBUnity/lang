@@ -1,4 +1,4 @@
-localVer = 0
+localVer = 1
 
 
 import wget
